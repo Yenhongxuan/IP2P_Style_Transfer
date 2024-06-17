@@ -59,6 +59,9 @@ cd ..
 ``` 
 
 ## Build environment
+In our experiment, we use Mambaforge to build the environment. Please use the [link](https://github.com/conda-forge/miniforge/releases) to install Mambaforge first. 
+
+
 There are two environment used in the process
 ### RTVST
 ```
