@@ -1,3 +1,6 @@
 [submodule "instruct-pix2pix"]
 	path = instruct-pix2pix
 	url = https://github.com/timothybrooks/instruct-pix2pix.git
+[submodule "RealTime_Video_Style_Transfer"]
+	path = RealTime_Video_Style_Transfer
+	url = https://github.com/justin871030/RealTime-Video-Style-Transfer.git
