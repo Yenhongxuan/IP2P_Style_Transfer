@@ -100,9 +100,24 @@ conda activate ip2p
 
 python generate_script.py --video ../results/video_0 --prompt "Turn them into clowns"
 
+bash ./running_scripts/video_0.sh
+
 cd ..
 ```
-You can choose the video folder by assign path of video folder to the property **--video**. Also, you can using different prompt by assign different command to the property **--prompt**. 
+The generated bash script file will be saved to **./running_scripts**. Please the corresponding bash script to apply instruct-pix2pix. After running the bash script, the styled foreground image will be saved to the specified video folder. 
+
+You can choose the video folder by assign path of video folder to the property **--video**. Also, you can using different prompt by assign different command to the property **--prompt**. For example, 
+```
+cd instruct-pix2pix
+
+conda activate ip2p
+
+python generate_script.py --video ../results/video_{idx} --prompt "Turn them into clowns"
+
+bash ./running_scripts/video_{idx}.sh
+
+cd ..
+```
 
 ### Merge the styled foreground and background
 Finally, we need to merge the styled foreground and background into a video. 
