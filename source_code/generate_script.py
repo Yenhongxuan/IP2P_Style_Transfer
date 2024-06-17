@@ -8,8 +8,9 @@ import glob
 
 def opt_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--video', type=str, default='CP_final_result/video_1')
+    parser.add_argument('--video', type=str, default='../results/video_0')
     parser.add_argument('--prompt', type=str, default='"Turn them into clowns"')
+    parser.add_argument('--output_folder', type=str, default='running_scripts')
     parser.add_argument('--cuda', type=str, default='1')
     opt = parser.parse_args()
     return opt
@@ -31,7 +32,8 @@ def main(opt):
             output_path = input_path[:-4] + '_styled.jpg'
             command_list.append(f'CUDA_VISIBLE_DEVICES={opt.cuda} python edit_cli.py --input {input_path} --output {output_path} --edit {opt.prompt}')
     bash_name = f'{video_name}.sh'
-    with open(bash_name, 'w') as f:
+    os.makedirs(opt.output_folder, exist_ok=True)
+    with open(os.path.join(opt.output_folder, bash_name), 'w') as f:
         for command in command_list:
             f.write(f'{command}\n')
 
